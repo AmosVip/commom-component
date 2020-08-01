@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CFlowLayout">
+        <attr name="c_flow_row_gap" format="dimension" />
+        <attr name="c_flow_column_gap" format="dimension" />
+        <attr name="c_flow_max_row_count" format="integer" />
+    </declare-styleable>
+</resources>
