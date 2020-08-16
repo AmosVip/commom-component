@@ -13,17 +13,20 @@
         android:text="Hello World!" />
 
     <com.common.ui.flow.CFlowLayout
-        android:paddingHorizontal="40dp"
+        android:visibility="gone"
+        android:id="@+id/cp_flow_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:c_flow_column_gap="10dp"
+        app:c_flow_row_gap="20dp"
+        app:c_flow_max_row_count="2"
         android:layout_marginTop="30dp"
         android:background="@color/colorAccent">
 
-        <TextView
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:background="@color/colorPrimary"
+             android:background="@color/colorPrimary"
             android:includeFontPadding="false"
             android:text="测试"
             android:textColor="#333333"
@@ -32,8 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:background="@color/colorPrimary"
+             android:background="@color/colorPrimary"
             android:includeFontPadding="false"
             android:text="测试测试测试测试测试"
             android:textColor="#333333"
@@ -42,8 +44,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:background="@color/colorPrimary"
+             android:background="@color/colorPrimary"
             android:includeFontPadding="false"
             android:text="测试"
             android:textColor="#333333"
@@ -77,8 +78,13 @@
             android:includeFontPadding="false"
             android:text="测试测试测试"
             android:textColor="#333333"
-            android:textSize="20sp" />
+            android:textSize="20sp" />-->
 
     </com.common.ui.flow.CFlowLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="@android:color/white"
+        android:id="@+id/rv_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
