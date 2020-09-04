@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.amos.study.navigation.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_userSettingFragment"
+            app:destination="@id/userSettingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userSettingFragment"
+        android:name="com.amos.study.navigation.UserSettingFragment"
+        android:label="fragment_user_setting"
+        tools:layout="@layout/fragment_user_setting" />
+</navigation>
