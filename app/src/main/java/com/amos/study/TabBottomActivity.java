@@ -1,10 +1,17 @@
 package com.amos.study;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <pre>
@@ -21,5 +28,10 @@ public class TabBottomActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         TabLayout tabLayout = new TabLayout(this);
         //tabLayout.newTab().setCustomView()
+       //ArrayList<? super TextView>
+       //ArrayList<? extends TextView>
+
+        Toast.makeText(this,"研究toast源码", Toast.LENGTH_SHORT).show();
+
     }
 }

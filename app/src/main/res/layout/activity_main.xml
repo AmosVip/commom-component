@@ -7,21 +7,28 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <Button
+        android:onClick="onSendNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="测试通知" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
     <com.common.ui.flow.CFlowLayout
-        android:visibility="gone"
         android:id="@+id/cp_flow_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:c_flow_column_gap="10dp"
-        app:c_flow_row_gap="20dp"
-        app:c_flow_max_row_count="2"
         android:layout_marginTop="30dp"
-        android:background="@color/colorAccent">
+        android:background="@color/colorAccent"
+        android:visibility="gone"
+        app:c_flow_column_gap="10dp"
+        app:c_flow_max_row_count="2"
+        app:c_flow_row_gap="20dp">
 
         <!--<TextView
             android:layout_width="wrap_content"
@@ -83,8 +90,8 @@
     </com.common.ui.flow.CFlowLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:background="@android:color/white"
         android:id="@+id/rv_grid"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:background="@android:color/white" />
 </LinearLayout>

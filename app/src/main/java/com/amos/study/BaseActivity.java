@@ -5,10 +5,15 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.NestedScrollingChild3;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <pre>
@@ -25,6 +30,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         logLifecycle("onCreate");
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("");
+        //NestedScrollingChild3
+
     }
 
     @Override
