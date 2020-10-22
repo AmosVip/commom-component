@@ -14,15 +14,19 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.media.session.MediaSessionCompat
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,12 +37,37 @@ class MainActivity : AppCompatActivity() {
         rv_grid.addItemDecoration(CommonItemDecoration())
         rv_grid.adapter = GridAdapter(this)
         testClass()
+        findViewById<Button>(R.id.btn_jump_to_web_activity).setOnClickListener {
+            NestedScrollWebViewActivity.launch(this)
+        }
+
+        findViewById<Button>(R.id.btn_nested_scroll).setOnClickListener {
+            NestedScrollActivity.launch(this)
+        }
+        formatTime()
     }
 
     private fun testClass() {
         val user = User(1, "Kotlin")
 
     }
+
+    private fun formatTime() {
+        val currentTime: Long = System.currentTimeMillis()
+        val tempTime: Long = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+            .parse("2020-09-22 18:25:35")
+            .time
+
+        val currentCalendar = Calendar.getInstance()
+        currentCalendar.timeInMillis = currentTime
+
+        val tempCalendar = Calendar.getInstance()
+        tempCalendar.timeInMillis = tempTime
+
+        val offsetMinute = currentCalendar.get(Calendar.MINUTE) - tempCalendar.get(Calendar.MINUTE)
+        Log.e("formatTime", "offsetMinute = $offsetMinute")
+    }
+
 
     private val musicChannelId: String = "music_channel_id"
     private val musicChannelName: String = "music_channel_name"
@@ -55,10 +84,8 @@ class MainActivity : AppCompatActivity() {
     //音频播放通知
     private fun onSendMediaPlayNotification() {
 
-
-
         onCreateNotificationChannel()
-        val mediaSession = MediaSessionCompat(this,"ssss")
+        val mediaSession = MediaSessionCompat(this, "ssss")
         val notification = NotificationCompat.Builder(this, musicChannelId)
             .setContentTitle("媒体播放通知")
             .setContentText("媒体播放内容")
