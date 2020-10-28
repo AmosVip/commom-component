@@ -69,8 +69,7 @@ public class ThreadPoolActivity extends BaseActivity {
      */
     private void studyFixThreadPool() {
         //Executors.newFixedThreadPool()
-        TabLayout
-
+        //TabLayout
     }
 
     private void useThreadPool() {
