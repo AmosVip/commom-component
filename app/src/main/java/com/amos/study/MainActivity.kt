@@ -27,6 +27,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.ThreadPoolExecutor
 
 
 class MainActivity : AppCompatActivity() {
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         val user = User(1, "Kotlin")
 
     }
+
 
     private fun formatTime() {
         val currentTime: Long = System.currentTimeMillis()
