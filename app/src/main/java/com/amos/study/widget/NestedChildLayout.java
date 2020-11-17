@@ -55,7 +55,7 @@ public class NestedChildLayout extends LinearLayout implements NestedScrollingCh
                 break;
             case MotionEvent.ACTION_MOVE:
                 //传递给父类自己滚动的参数 看看父类是否要消费, 同时返回消费后的剩余数据
-                if (dispatchNestedPreScroll()) {
+                /*if (dispatchNestedPreScroll()) {
 
                 }
 
@@ -63,7 +63,7 @@ public class NestedChildLayout extends LinearLayout implements NestedScrollingCh
                 //滚动后 告诉父类目前还没有消费的数据
                 if (dispatchNestedScroll()) {
 
-                }
+                }*/
 
                 break;
             case MotionEvent.ACTION_UP:

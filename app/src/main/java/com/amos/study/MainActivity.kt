@@ -48,6 +48,11 @@ class MainActivity : AppCompatActivity() {
         formatTime()
     }
 
+    private fun requestPermission(){
+
+    }
+
+
     private fun testClass() {
         val user = User(1, "Kotlin")
 

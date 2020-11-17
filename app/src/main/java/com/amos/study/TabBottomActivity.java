@@ -34,4 +34,8 @@ public class TabBottomActivity extends BaseActivity {
         Toast.makeText(this,"研究toast源码", Toast.LENGTH_SHORT).show();
 
     }
+
+    private void requestPermission(){
+
+    }
 }
