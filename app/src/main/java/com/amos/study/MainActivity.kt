@@ -24,6 +24,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.amos.study.socket.SocketActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -34,6 +35,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        findViewById<Button>(R.id.btn_socket).setOnClickListener{
+            SocketActivity.launch(this)
+        }
+
         rv_grid.layoutManager = GridLayoutManager(this, 3)
         rv_grid.addItemDecoration(CommonItemDecoration())
         rv_grid.adapter = GridAdapter(this)

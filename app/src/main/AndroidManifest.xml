@@ -25,6 +25,10 @@
         <activity android:name=".kotlin.KotlinMainActivity" />
 
         <activity android:name=".NestedScrollActivity" />
+
+        <activity android:name=".socket.SocketActivity" />
+
+        <activity android:name=".DiyTayLayoutActivity" />
     </application>
 
 </manifest>
