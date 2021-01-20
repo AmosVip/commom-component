@@ -24,6 +24,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.amos.study.scroll.ScrollTestActivity
 import com.amos.study.socket.SocketActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.text.SimpleDateFormat
@@ -35,7 +36,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        findViewById<Button>(R.id.btn_socket).setOnClickListener{
+        btnTextViewExpand.setOnClickListener {
+            TestTextViewExpandActivity.launch(this)
+        }
+
+        findViewById<Button>(R.id.btn_socket).setOnClickListener {
             SocketActivity.launch(this)
         }
 
@@ -50,10 +55,13 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_nested_scroll).setOnClickListener {
             NestedScrollActivity.launch(this)
         }
+        findViewById<Button>(R.id.btn_scroll_test).setOnClickListener {
+            ScrollTestActivity.launch(this)
+        }
         formatTime()
     }
 
-    private fun requestPermission(){
+    private fun requestPermission() {
 
     }
 

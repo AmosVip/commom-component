@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_white"
+            android:orientation="vertical">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/design_default_color_error" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginVertical="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/viewTag1"
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_333333" />
+
+                    <View
+                        android:id="@+id/viewTag2"
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_E03C34" />
+
+                    <View
+                        android:id="@+id/viewTag3"
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_999999" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="900dp"
+                android:background="@color/trend_green" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

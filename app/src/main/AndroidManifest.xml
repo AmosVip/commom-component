@@ -20,6 +20,8 @@
 
         </activity>
 
+        <activity android:name=".TestTextViewExpandActivity" />
+
         <activity android:name=".NestedScrollWebViewActivity" />
 
         <activity android:name=".kotlin.KotlinMainActivity" />
@@ -29,6 +31,8 @@
         <activity android:name=".socket.SocketActivity" />
 
         <activity android:name=".DiyTayLayoutActivity" />
+
+        <activity android:name=".scroll.ScrollTestActivity" />
     </application>
 
 </manifest>

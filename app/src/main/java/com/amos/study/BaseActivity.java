@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.preference.PreferenceActivity;
 import android.util.Log;
 import android.widget.Spinner;
 

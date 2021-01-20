@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnTextViewExpand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试testview展开和收起" />
+
+    <Button
+        android:id="@+id/btn_scroll_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="横向/纵向滚动测试" />
+
     <Button
         android:id="@+id/btn_socket"
         android:layout_width="wrap_content"
@@ -14,22 +27,25 @@
         android:text="socket" />
 
     <Button
-        android:onClick="onSendNotification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:onClick="onSendNotification"
         android:text="测试通知" />
+
     <Button
         android:id="@+id/btn_jump_to_web_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="测试嵌套滚动的webview" />
+
     <Button
         android:id="@+id/btn_nested_scroll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="嵌套滚动"/>
+        android:text="嵌套滚动" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
