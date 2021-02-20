@@ -43,6 +43,10 @@ public class TabBottomActivity extends BaseActivity {
 
     }
 
+    enum  Week{
+
+    }
+
     class TestView extends View{
 
         public TestView(Context context) {

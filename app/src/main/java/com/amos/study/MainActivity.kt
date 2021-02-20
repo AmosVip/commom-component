@@ -9,7 +9,6 @@ import android.app.RemoteInput
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
@@ -26,18 +25,27 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.amos.study.scroll.ScrollTestActivity
 import com.amos.study.socket.SocketActivity
+import com.amos.study.ui.AndroidAutoSizeActivity
+import com.amos.study.ui.RxJavaActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.concurrent.ThreadPoolExecutor
+import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
+    private val TAG: String = javaClass.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        btnAndroidAutoSize.setOnClickListener {
+            AndroidAutoSizeActivity.launch(this)
+        }
+        btnRxJava.setOnClickListener {
+            RxJavaActivity.launch(this)
+        }
         btnTextViewExpand.setOnClickListener {
-            TestTextViewExpandActivity.launch(this)
+            ExpandTextViewActivity.launch(this)
         }
 
         findViewById<Button>(R.id.btn_socket).setOnClickListener {
@@ -59,7 +67,22 @@ class MainActivity : AppCompatActivity() {
             ScrollTestActivity.launch(this)
         }
         formatTime()
+        studyKotlinMethod()
+        val str = UUID.randomUUID().toString()/*.replace("-", "")*/
+        Log.e("UUID", " UUID = $str")
+
     }
+
+
+    private var list: ArrayList<Int>? = ArrayList()
+    private fun studyKotlinMethod() {
+        list?.let {
+            it.add(1)
+            it.add(2)
+        }
+        Log.e(TAG, "$list")
+    }
+
 
     private fun requestPermission() {
 
@@ -100,6 +123,7 @@ class MainActivity : AppCompatActivity() {
         //onSendFullScreenNotification()
         onSendMediaPlayNotification()
     }
+
 
     //音频播放通知
     private fun onSendMediaPlayNotification() {

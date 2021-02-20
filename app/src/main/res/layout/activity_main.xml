@@ -8,6 +8,18 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btnAndroidAutoSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AndroidAutoSize" />
+
+    <Button
+        android:id="@+id/btnRxJava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rxjava" />
+
+    <Button
         android:id="@+id/btnTextViewExpand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

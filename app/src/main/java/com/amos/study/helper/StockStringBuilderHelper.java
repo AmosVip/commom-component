@@ -68,7 +68,7 @@ public class StockStringBuilderHelper {
             contractVo.setCode(ssb.subSequence(end - 8, end - 2).toString());*/
             ssb.replace(start, end, ssb.subSequence(start, end - 11));
             CenterImageSpan imageSpan = new CenterImageSpan(mContext, R.mipmap.icon_stock_icon, ImageSpan.ALIGN_BASELINE);
-            ssb.setSpan(imageSpan, start, start + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE); //Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+            ssb.setSpan(imageSpan, start, start + 1, Spannable.SPAN_EXCLUSIVE_INCLUSIVE); //Spannable.SPAN_EXCLUSIVE_INCLUSIVE
             ssb.setSpan(new ClickableSpan() {
                 @Override
                 public void onClick(@NonNull View widget) {
@@ -81,7 +81,7 @@ public class StockStringBuilderHelper {
                     ds.setUnderlineText(false);
                     ds.setColor(Color.parseColor("#3683FF"));
                 }
-            }, start, end - 11, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE); //SPAN_EXCLUSIVE_EXCLUSIVE
+            }, start, end - 11, Spannable.SPAN_EXCLUSIVE_INCLUSIVE); //SPAN_EXCLUSIVE_EXCLUSIVE
         }
         return ssb;
     }

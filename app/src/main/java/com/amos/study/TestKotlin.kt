@@ -9,6 +9,7 @@ import androidx.viewpager.widget.ViewPager
  */
 
 fun main() {
+    maxByOrNull()
     testClass()
     testObject()
     testExtends()
@@ -16,6 +17,23 @@ fun main() {
     RawStringClass().rawStringMethod()
     CollectionClass().filterMethod()
     CollectionClass().mapMethod()
+}
+
+private fun maxByOrNull() {
+    var temp = listOf<Int>(1, 3, 4, 6, 22, 555)
+    println(temp.maxByOrNull { it })
+    temp.filter { it >20 }
+
+    temp.map {  }
+    temp.any{
+        it ==555
+    }
+    temp.count {
+        it < 30
+    }
+    temp.groupBy {  }
+    temp.forEach {  }
+    //temp.forEach()
 }
 
 private fun testClass() {

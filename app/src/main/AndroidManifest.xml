@@ -6,12 +6,21 @@
 
     <application
         android:allowBackup="true"
+        android:name=".base.BaseApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="750" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="1334" />
+
+        <activity android:name=".ui.AndroidAutoSizeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +29,7 @@
 
         </activity>
 
-        <activity android:name=".TestTextViewExpandActivity" />
+        <activity android:name=".ExpandTextViewActivity" />
 
         <activity android:name=".NestedScrollWebViewActivity" />
 
@@ -33,6 +42,10 @@
         <activity android:name=".DiyTayLayoutActivity" />
 
         <activity android:name=".scroll.ScrollTestActivity" />
+
+        <activity android:name=".ui.RxJavaActivity" />
+
+<!--        <activity android:name=".ui.AndroidAutoSizeActivity"/>-->
     </application>
 
 </manifest>
