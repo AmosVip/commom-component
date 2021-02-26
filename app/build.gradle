@@ -101,5 +101,6 @@ dependencies {
     implementation 'me.jessyan:autosize:1.2.1'
     //Gson
     implementation 'com.google.code.gson:gson:2.8.6'
-
+    //FlycoTabLayout  tab的切换
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
 }
