@@ -23,11 +23,20 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.amos.study.compose.ComposeMainActivity
+import com.amos.study.databinding.ActivityMainBinding
 import com.amos.study.scroll.ScrollTestActivity
 import com.amos.study.socket.SocketActivity
 import com.amos.study.ui.AndroidAutoSizeActivity
+import com.amos.study.ui.FileStudyActivity
+import com.amos.study.ui.NestedScrollWebViewActivity
 import com.amos.study.ui.RxJavaActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import com.amos.study.utlis.TestInternal
+import com.amos.study.utlis.testMethod
+import com.jds.network.TestActivity
+import com.jindashi.plhb.JPLLongHuBangConfig
+import com.jindashi.plhb.JPLLongHuBangService
+
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -35,16 +44,51 @@ import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     private val TAG: String = javaClass.simpleName
+    private lateinit var vb: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        btnAndroidAutoSize.setOnClickListener {
+        //setContentView(R.layout.activity_main)
+        vb = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(vb.root)
+
+
+
+
+        testMethod()
+
+        JPLLongHuBangConfig.init()
+
+        vb.btnLHB.setOnClickListener {
+            JPLLongHuBangService.onLaunchHomePage(this)
+
+        }
+        vb.btnIOFile.setOnClickListener {
+            FileStudyActivity.launch(this)
+        }
+        vb.btnLiveData.setOnClickListener {
+            TestActivity.launch(this)
+        }
+        //tvExpandTextView
+//        tvExpandTextView.initWidth(getWindowManager().getDefaultDisplay().getWidth())
+        // 设置最大行数
+        vb.tvExpandTextView.setMaxLines(2)
+        val content =
+            "3次新股均晋级4连板，市场关注度颇高！3次";
+        vb.tvExpandTextView.setTextWord(content)
+
+
+        vb.btnCompose.setOnClickListener {
+            ComposeMainActivity.launch(this)
+        }
+
+        vb.btnAndroidAutoSize.setOnClickListener {
             AndroidAutoSizeActivity.launch(this)
         }
-        btnRxJava.setOnClickListener {
+        vb.btnRxJava.setOnClickListener {
             RxJavaActivity.launch(this)
         }
-        btnTextViewExpand.setOnClickListener {
+        vb.btnTextViewExpand.setOnClickListener {
             ExpandTextViewActivity.launch(this)
         }
 
@@ -52,9 +96,9 @@ class MainActivity : AppCompatActivity() {
             SocketActivity.launch(this)
         }
 
-        rv_grid.layoutManager = GridLayoutManager(this, 3)
-        rv_grid.addItemDecoration(CommonItemDecoration())
-        rv_grid.adapter = GridAdapter(this)
+        vb.rvGrid.layoutManager = GridLayoutManager(this, 3)
+        vb.rvGrid.addItemDecoration(CommonItemDecoration())
+        vb.rvGrid.adapter = GridAdapter(this)
         testClass()
         findViewById<Button>(R.id.btn_jump_to_web_activity).setOnClickListener {
             NestedScrollWebViewActivity.launch(this)
@@ -71,6 +115,8 @@ class MainActivity : AppCompatActivity() {
         val str = UUID.randomUUID().toString()/*.replace("-", "")*/
         Log.e("UUID", " UUID = $str")
 
+
+        list?.let { }
     }
 
 

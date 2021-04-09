@@ -1,13 +1,13 @@
-package com.amos.study
+package com.amos.study.ui
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.amos.study.R
+import com.amos.study.utlis.TestInternal
+import com.amos.study.utlis.testMethod
 import com.amos.study.widget.NestedScrollWebView
-import java.text.SimpleDateFormat
-import java.util.*
 
 /**
  * @author: amos
@@ -26,7 +26,7 @@ class NestedScrollWebViewActivity : AppCompatActivity() {
         nestedScrollWebView = findViewById(R.id.nested_scroll_webview)
 
         onLoadWebView()
-
+         testMethod()
     }
 
     private fun onLoadWebView() {

@@ -21,8 +21,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.amos.study.BuildConfig
 import com.amos.study.R
+import com.amos.study.databinding.DialogAndroidAutoSizeBinding
 import com.amos.study.widget.ObservableWebView
-import kotlinx.android.synthetic.main.dialog_android_auto_size.view.*
 
 /**
  * @author: amos
@@ -32,7 +32,8 @@ import kotlinx.android.synthetic.main.dialog_android_auto_size.view.*
 
 class MyDialogFragment : DialogFragment() {
     private val url: String = "https://hd.get88.cn/xiguatest/xieyi/PrivacyProtocal.html"
-    private lateinit var mContext: Context;
+    private lateinit var mContext: Context
+    private lateinit var mViewBinding: DialogAndroidAutoSizeBinding
 
     companion object {
         val TAG: String = MyDialogFragment::class.java.simpleName
@@ -43,7 +44,7 @@ class MyDialogFragment : DialogFragment() {
         mContext = context;
     }
 
-    private lateinit var mRootView: View;
+    //private lateinit var mRootView: View;
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         //return super.onCreateDialog(savedInstanceState)
         return MyDialog(mContext, 0)
@@ -54,8 +55,9 @@ class MyDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mRootView = inflater.inflate(R.layout.dialog_android_auto_size, container, false)
-        return mRootView
+        //mRootView = inflater.inflate(R.layout.dialog_android_auto_size, container, false)
+        mViewBinding = DialogAndroidAutoSizeBinding.inflate(inflater, container, false)
+        return mViewBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -63,17 +65,17 @@ class MyDialogFragment : DialogFragment() {
         initWebView()
         var jsBridge = JSAppBridgeImpl()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            mRootView.webview.addJavascriptInterface(
+            mViewBinding.webview.addJavascriptInterface(
                 jsBridge,
                 JSAppBridge.JS_OBJ_NAME
             )
         } else {
-            mRootView.webview.removeJavascriptInterface("searchBoxJavaBridge_")
+            mViewBinding.webview.removeJavascriptInterface("searchBoxJavaBridge_")
         }
-        val preUA: String = mRootView.webview.getSettings().getUserAgentString()
-        mRootView.webview.getSettings()
+        val preUA: String = mViewBinding.webview.getSettings().getUserAgentString()
+        mViewBinding.webview.getSettings()
             .setUserAgentString(preUA + jsBridge.getUserAgent())
-        mRootView.webview.loadUrl(url)
+        mViewBinding.webview.loadUrl(url)
     }
 
 
@@ -103,7 +105,7 @@ class MyDialogFragment : DialogFragment() {
 
 
     private fun initWebView() {
-        val webSettings: WebSettings = mRootView.webview.getSettings()
+        val webSettings: WebSettings = mViewBinding.webview.getSettings()
         webSettings.javaScriptEnabled = true
         webSettings.setAppCacheEnabled(true)
         webSettings.domStorageEnabled = true
@@ -112,7 +114,7 @@ class MyDialogFragment : DialogFragment() {
         webSettings.layoutAlgorithm = WebSettings.LayoutAlgorithm.NARROW_COLUMNS
         webSettings.useWideViewPort = true
         webSettings.textSize = WebSettings.TextSize.NORMAL
-        mRootView.webview.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY)
+        mViewBinding.webview.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY)
         // 内容调试支持
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG)
@@ -131,13 +133,13 @@ class MyDialogFragment : DialogFragment() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             webSettings.mediaPlaybackRequiresUserGesture = false
         }
-        mRootView.webview.setWebChromeClient(object : WebChromeClient() {
+        mViewBinding.webview.setWebChromeClient(object : WebChromeClient() {
             override fun onReceivedTitle(view: WebView, title: String) {
                 super.onReceivedTitle(view, title)
             }
         })
-        mRootView.webview.setWebViewClient(object :
-            ObservableWebView.ObservableWebViewClient(mRootView.webview) {
+        mViewBinding.webview.setWebViewClient(object :
+            ObservableWebView.ObservableWebViewClient(mViewBinding.webview) {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 // 如果要求页面加载完毕之后可用 则设置按钮状态

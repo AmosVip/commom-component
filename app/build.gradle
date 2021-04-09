@@ -1,6 +1,12 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'com.android.application'
+//apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+//    id 'kotlin-android-extensions'
+//    id 'org.jetbrains.compose'/* version '0.3.0'*/
+}
 
 android {
     compileSdkVersion 29
@@ -50,16 +56,47 @@ android {
             }
         }
     }
+
+   /* buildFeatures {
+        // Enables Jetpack Compose for this module
+        viewBinding true
+        //compose false
+    }*/
+
+    viewBinding {
+        enabled = true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        //useIR = true
+    }
+
+    /*composeOptions {
+        kotlinCompilerVersion '1.4.31'
+        kotlinCompilerExtensionVersion '1.0.0-alpha12'
+    }*/
 }
+
+/*tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs += ["-Xallow-jvm-ir-dependencies"]
+    }
+}*/
 
 def activity_version = "1.1.0"
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(path: ':jds_public_network')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.3.2'
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation project(path: ':common-ui')
+    implementation project(path: ':stockcloud')
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.1.0'
@@ -67,8 +104,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
     testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //kotlin协程
     //implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
@@ -83,13 +120,12 @@ dependencies {
 //    annotationProcessor "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
 
 
-
     // Java language implementation
     implementation "androidx.activity:activity:$activity_version"
     // Kotlin
     implementation "androidx.activity:activity-ktx:$activity_version"
 
-    implementation 'com.airbnb.android:lottie:2.1.0'
+    implementation 'com.airbnb.android:lottie:3.4.1'
     //rxjava
     implementation "io.reactivex.rxjava3:rxjava:3.0.0" //3.0.10
     //rx android
@@ -103,4 +139,31 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     //FlycoTabLayout  tab的切换
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+
+    //android composable 支持库 start =====================================================
+    /*implementation 'androidx.compose.ui:ui:1.0.0-alpha12'
+    // Tooling support (Previews, etc.)
+    implementation 'androidx.compose.ui:ui-tooling:1.0.0-alpha10'
+
+    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
+    implementation 'androidx.compose.foundation:foundation:1.0.0-alpha12'
+    // Material Design
+    implementation 'androidx.compose.material:material:1.0.0-alpha12'
+    // Material design icons
+    implementation 'androidx.compose.material:material-icons-core:1.0.0-alpha12'
+    implementation 'androidx.compose.material:material-icons-extended:1.0.0-alpha10'
+    // Integration with observables
+    implementation 'androidx.compose.runtime:runtime-livedata:1.0.0-alpha10'
+    implementation 'androidx.compose.runtime:runtime-rxjava2:1.0.0-alpha10'
+    implementation "androidx.compose.compiler:compiler:1.0.0-alpha10"
+
+    // UI Tests
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.0-alpha10'*/
+    //android composable 支持库 end =====================================================
+
+
+    //龙虎榜
+    implementation "com.jds.renzhe:jds-public-lhb:1.0.3"
+   /* implementation 'com.jds.renzhe:jds-public-base:1.0.0'
+    implementation 'com.jds.renzhe:jds-public-http:1.0.0'*/
 }

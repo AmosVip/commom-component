@@ -1,0 +1,50 @@
+ext {
+    //Android
+    compileSdkVersion = 30
+    buildToolsVersion = "30.0.2"
+    minSdkVersion = 19
+    targetSdkVersion = 30
+
+
+    okHttpVersion = '4.9.0'
+    retrofitVersion = '2.9.0'
+    lifecycle_version = '2.3.0'
+    kotlin_version = '1.4.31'
+
+    dependencies = [
+            //kotlin支持库
+            kotlin_stdlib                          : "org.jetbrains.kotlin:kotlin-stdlib:1.4.31",
+            kotlin_core                            : 'androidx.core:core-ktx:1.3.2',
+            // 协程
+            kotlin_coroutines_android              : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3",
+            kotlin_reflect                         : "org.jetbrains.kotlin:kotlin-reflect$kotlin_version",
+
+            //Android 支持库
+            androidx_appcompat                     : 'androidx.appcompat:appcompat:1.2.0',
+            android_material                       : 'com.google.android.material:material:1.2.0',
+            androidx_constraintlayout              : "androidx.constraintlayout:constraintlayout:1.1.3",
+
+            androidx_lifecycle_extensions          : "androidx.lifecycle:lifecycle-extensions:2.2.0", // ViewModel
+            androidx_lifecycle_viewmodel_ktx       : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version", // ViewModel
+            androidx_lifecycle_livedata_ktx        : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",// LiveData
+            androidx_lifecycle_runtime_ktx         : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",// Lifecycles only (without ViewModel or LiveData)
+            androidx_lifecycle_viewmodel_savedstate: "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version", // Saved state module for ViewModel
+            androidx_activity_ktx                  : "androidx.activity:activity-ktx:1.1.0",
+
+            // OkHttp
+            okhttp                                 : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+            okhttp_logging                         : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            // Retrofit
+            retrofit                               : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            //moshi json 解析 针对 kotlin支持更友好
+            retrofit_moshi                         : "com.squareup.retrofit2:converter-moshi:$retrofitVersion",
+            retrofit_converter_gson                : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+
+            //Android Auto Size
+            autosize                               : "me.jessyan:autosize:1.2.1",
+
+            //smartRefresh
+            smart_refresh                          : "com.scwang.smart:refresh-layout-kernel:2.0.1",    //核心必须依赖
+            smart_header                           : "com.scwang.smart:refresh-header-classics:2.0.1"   //经典刷新头
+    ]
+}

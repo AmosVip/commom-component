@@ -9,10 +9,17 @@ import kotlin.math.sqrt
  * @date: 2020/12/7 14:50
  * @description:
  */
+fun main(){
+
+}
+
+fun testFunParams(name: String, ){
+
+}
 
 
-fun main() {
-    /*for (i in 1..8 step 2) print(i)
+/*fun main() {
+    *//*for (i in 1..8 step 2) print(i)
     println()
     for (i in 8 downTo 1 step 2) print(i)
 
@@ -36,10 +43,11 @@ fun main() {
     runBlocking {
 
     }
-    GlobalScope.launch {  }*/
+    GlobalScope.launch {  }*//*
     //studyKotlinMethod()
-    calculationSize()
-}
+   // calculationSize()
+
+}*/
 
 private val TAG: String = "KotlinStudy"
 private var list: ArrayList<Int>? = ArrayList()

@@ -20,7 +20,7 @@ fun main() {
 }
 
 private fun maxByOrNull() {
-    var temp = listOf<Int>(1, 3, 4, 6, 22, 555)
+    /*var temp = listOf<Int>(1, 3, 4, 6, 22, 555)
     println(temp.maxByOrNull { it })
     temp.filter { it >20 }
 
@@ -33,7 +33,7 @@ private fun maxByOrNull() {
     }
     temp.groupBy {  }
     temp.forEach {  }
-    //temp.forEach()
+    //temp.forEach()*/
 }
 
 private fun testClass() {

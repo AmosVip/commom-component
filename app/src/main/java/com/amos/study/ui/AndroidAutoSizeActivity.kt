@@ -14,8 +14,9 @@ import android.webkit.WebView
 import com.amos.study.BaseActivity
 import com.amos.study.BuildConfig
 import com.amos.study.R
+import com.amos.study.databinding.ActivityAndroidAutoSizeBinding
+import com.amos.study.databinding.ActivityMainBinding
 import com.amos.study.widget.ObservableWebView
-import kotlinx.android.synthetic.main.activity_android_auto_size.*
 
 /**
  * @author: amos
@@ -24,6 +25,8 @@ import kotlinx.android.synthetic.main.activity_android_auto_size.*
  */
 class AndroidAutoSizeActivity : BaseActivity() {
     private val url: String = "https://hd.get88.cn/xiguatest/xieyi/PrivacyProtocal.html"
+    private lateinit var mViewBinding: ActivityAndroidAutoSizeBinding
+
 
     companion object {
         fun launch(context: Context) {
@@ -31,30 +34,34 @@ class AndroidAutoSizeActivity : BaseActivity() {
         }
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_android_auto_size)
+        //setContentView(R.layout.activity_android_auto_size)
+        mViewBinding = ActivityAndroidAutoSizeBinding.inflate(layoutInflater)
+        setContentView(mViewBinding.root)
+
         initWebView()
         var jsBridge = JSAppBridgeImpl()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            autoWebView.addJavascriptInterface(
+            mViewBinding.autoWebView.addJavascriptInterface(
                 jsBridge,
                 JSAppBridge.JS_OBJ_NAME
             )
         } else {
-            autoWebView.removeJavascriptInterface("searchBoxJavaBridge_")
+            mViewBinding.autoWebView.removeJavascriptInterface("searchBoxJavaBridge_")
         }
-        val preUA: String = autoWebView.settings.userAgentString
-        autoWebView.settings.userAgentString = preUA + jsBridge.userAgent
-        autoWebView.loadUrl(url)
+        val preUA: String = mViewBinding.autoWebView.settings.userAgentString
+        mViewBinding.autoWebView.settings.userAgentString = preUA + jsBridge.userAgent
+        mViewBinding.autoWebView.loadUrl(url)
 
-        tv_right_btn.setOnClickListener {
+        mViewBinding.tvRightBtn.setOnClickListener {
             MyDialogFragment().show(supportFragmentManager, MyDialogFragment.TAG)
         }
     }
 
     private fun initWebView() {
-        val webSettings: WebSettings = autoWebView.getSettings()
+        val webSettings: WebSettings = mViewBinding.autoWebView.getSettings()
         webSettings.javaScriptEnabled = true
         webSettings.setAppCacheEnabled(true)
         webSettings.domStorageEnabled = true
@@ -63,7 +70,7 @@ class AndroidAutoSizeActivity : BaseActivity() {
         webSettings.layoutAlgorithm = WebSettings.LayoutAlgorithm.NARROW_COLUMNS
         webSettings.useWideViewPort = true
         webSettings.textSize = WebSettings.TextSize.NORMAL
-        autoWebView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY)
+        mViewBinding.autoWebView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY)
         // 内容调试支持
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //autoWebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG)
@@ -82,13 +89,13 @@ class AndroidAutoSizeActivity : BaseActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             webSettings.mediaPlaybackRequiresUserGesture = false
         }
-        autoWebView.setWebChromeClient(object : WebChromeClient() {
+        mViewBinding.autoWebView.setWebChromeClient(object : WebChromeClient() {
             override fun onReceivedTitle(view: WebView, title: String) {
                 super.onReceivedTitle(view, title)
             }
         })
-        autoWebView.setWebViewClient(object :
-            ObservableWebView.ObservableWebViewClient(autoWebView) {
+        mViewBinding.autoWebView.setWebViewClient(object :
+            ObservableWebView.ObservableWebViewClient(mViewBinding.autoWebView) {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 // 如果要求页面加载完毕之后可用 则设置按钮状态

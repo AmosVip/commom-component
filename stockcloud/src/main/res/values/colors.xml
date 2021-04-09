@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ggt_login_black">#e03c34</color>
+    <color name="cloud_one">@android:color/holo_blue_light</color>
+    <color name="cloud_two">#673AB7</color>
+    <color name="cloud_three">#F44336</color>
+    <color name="cloud_four">#FFC107</color>
+    <color name="cloud_five">#8BC34A</color>
+    <color name="cloud_six">#CDDC39</color>
+    <color name="cloud_seven">#009688</color>
+    <color name="color_white">#fff</color>
+
+
+</resources>

@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.NestedScrollingChild3;
+import androidx.lifecycle.Lifecycle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("");
         //NestedScrollingChild3
+//        Lifecycle
+        //getLifecycle().addObserver(this);
+
 
     }
 

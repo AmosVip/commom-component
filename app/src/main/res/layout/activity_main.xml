@@ -7,6 +7,39 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <com.amos.study.widget.SeeDetailTextView
+        android:id="@+id/tvExpandTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/color_333333"
+        android:textSize="18dp" />
+    <Button
+        android:id="@+id/btnLHB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="龙虎榜" />
+
+    <Button
+        android:id="@+id/btnIOFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IOFile" />
+
+    <Button
+        android:id="@+id/btnLiveData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LiveData" />
+
+    <Button
+        android:id="@+id/btnCompose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compose" />
+
     <Button
         android:id="@+id/btnAndroidAutoSize"
         android:layout_width="wrap_content"

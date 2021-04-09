@@ -1,3 +1,6 @@
+include ':stockcloud'
+include ':jds_public_network'
+include ':testmodule'
 include ':common-ui'
 include ':app'
 rootProject.name = "commom-component"

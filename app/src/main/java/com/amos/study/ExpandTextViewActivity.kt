@@ -10,8 +10,9 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
 import android.widget.TextView
+import com.amos.study.databinding.ActivityTestTextviewExpandBinding
 import com.amos.study.helper.StockStringBuilderHelper
-import kotlinx.android.synthetic.main.activity_test_textview_expand.*
+import com.amos.study.utlis.TestInternal
 
 /**
  * @author: amos
@@ -29,21 +30,25 @@ class ExpandTextViewActivity : BaseActivity() {
 
     private val MAX_LINE = 3
     private val tag = ExpandTextViewActivity.javaClass.simpleName
+    private lateinit var mViewBinding:ActivityTestTextviewExpandBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_textview_expand)
-        tvContent.setOnClickListener {
-            val isExpand = tvContent.tag as Boolean
+        //TestInternal.testMethod()
+        mViewBinding = ActivityTestTextviewExpandBinding.inflate(layoutInflater)
+        mViewBinding.tvContent.setOnClickListener {
+            val isExpand = mViewBinding.tvContent.tag as Boolean
             if (isExpand) {
-                tvContent.tag = false
-                tvContent.maxLines = MAX_LINE
+                mViewBinding.tvContent.tag = false
+                mViewBinding.tvContent.maxLines = MAX_LINE
             } else {
-                val ellipsisCount = tvContent.layout.getEllipsisCount(tvContent.lineCount - 1)
+                val ellipsisCount = mViewBinding.tvContent.layout.getEllipsisCount(mViewBinding.tvContent.lineCount - 1)
                 Log.e(tag, "ellipsisCount = $ellipsisCount")
                 if (ellipsisCount > 0) {
-                    tvContent.setMaxHeight(getResources().getDisplayMetrics().heightPixels)
-                    tvContent.tag = true
+                    mViewBinding.tvContent.setMaxHeight(getResources().getDisplayMetrics().heightPixels)
+                    mViewBinding.tvContent.tag = true
                 }
             }
         }
@@ -52,12 +57,12 @@ class ExpandTextViewActivity : BaseActivity() {
     }
 
     private fun setContent() {
-        tvContent.maxLines = MAX_LINE
+        mViewBinding.tvContent.maxLines = MAX_LINE
         val content: String =
             "6月2日讯，${'$'}新华医疗(SH600587)${'$'}发布关于媒体报道的澄清公告称，经核实，剔除威士达合并报表因素影响后，公司2019年度营业收入与201" +
                     "8年度相比实际增长2.21%。公司营业收入与经营活动现金流量表匹配，不存在营业收入虚增事项。" +
                     "公司营业成本与“购买商品、接受劳务支付的现金”金额匹配，不存在营业成本虚减事项。公司不存在偿债风险。"
-        tvContent.setText(
+        mViewBinding.tvContent.setText(
             StockStringBuilderHelper.setSpan(
                 this,
                 content
@@ -66,8 +71,8 @@ class ExpandTextViewActivity : BaseActivity() {
 //        tvContent.movementMethod = LinkMovementMethod.getInstance()
         //tvContent.movementMethod = StockStringBuilderHelper.CustomLinkMovementMethod.getInstance()
         //tvContent.setTextIsSelectable(true)
-        tvContent.tag = false
-        tvContent.setOnTouchListener(ClickableSpanTouchListener())
+        mViewBinding.tvContent.tag = false
+        mViewBinding.tvContent.setOnTouchListener(ClickableSpanTouchListener())
     }
 
     class ClickableSpanTouchListener : OnTouchListener {
