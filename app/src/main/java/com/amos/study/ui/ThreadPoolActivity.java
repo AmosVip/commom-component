@@ -4,17 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.HandlerThread;
-import android.os.Process;
 
 import androidx.annotation.Nullable;
 
-import com.amos.study.BaseActivity;
+import com.amos.study.base.BaseActivity;
 import com.amos.study.R;
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author: amos

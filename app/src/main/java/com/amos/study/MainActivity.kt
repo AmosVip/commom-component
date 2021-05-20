@@ -23,15 +23,17 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.amos.study.activity.ExpandTextViewActivity
+import com.amos.study.activity.NestedScrollActivity
 import com.amos.study.compose.ComposeMainActivity
 import com.amos.study.databinding.ActivityMainBinding
+import com.amos.study.decoration.CommonItemDecoration
 import com.amos.study.scroll.ScrollTestActivity
 import com.amos.study.socket.SocketActivity
 import com.amos.study.ui.AndroidAutoSizeActivity
 import com.amos.study.ui.FileStudyActivity
 import com.amos.study.ui.NestedScrollWebViewActivity
 import com.amos.study.ui.RxJavaActivity
-import com.amos.study.utlis.TestInternal
 import com.amos.study.utlis.testMethod
 import com.jds.network.TestActivity
 import com.jindashi.plhb.JPLLongHuBangConfig
@@ -72,10 +74,10 @@ class MainActivity : AppCompatActivity() {
         //tvExpandTextView
 //        tvExpandTextView.initWidth(getWindowManager().getDefaultDisplay().getWidth())
         // 设置最大行数
-        vb.tvExpandTextView.setMaxLines(2)
+        /*vb.tvExpandTextView.setMaxLines(2)
         val content =
             "3次新股均晋级4连板，市场关注度颇高！3次";
-        vb.tvExpandTextView.setTextWord(content)
+        vb.tvExpandTextView.setTextWord(content)*/
 
 
         vb.btnCompose.setOnClickListener {
@@ -117,6 +119,8 @@ class MainActivity : AppCompatActivity() {
 
 
         list?.let { }
+
+
     }
 
 

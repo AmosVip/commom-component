@@ -1,8 +1,11 @@
-package com.amos.study;
+package com.amos.study.activity;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+
+import com.amos.study.R;
+import com.amos.study.base.BaseActivity;
 
 /**
  * @author: amos

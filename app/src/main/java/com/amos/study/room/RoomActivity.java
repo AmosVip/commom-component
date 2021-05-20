@@ -1,12 +1,10 @@
 package com.amos.study.room;
 
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
-import com.amos.study.BaseActivity;
+import com.amos.study.base.BaseActivity;
 
 /**
  * <pre>

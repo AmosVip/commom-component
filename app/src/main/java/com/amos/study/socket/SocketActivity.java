@@ -1,16 +1,13 @@
 package com.amos.study.socket;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment;
 
-import com.amos.study.BaseActivity;
+import com.amos.study.base.BaseActivity;
 import com.amos.study.R;
-import com.google.android.material.tabs.TabLayout;
 
 /**
  * @author: amos

@@ -1,4 +1,4 @@
-package com.amos.study
+package com.amos.study.decoration
 
 import android.graphics.Canvas
 import android.graphics.Color

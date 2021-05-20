@@ -3,4 +3,5 @@ include ':jds_public_network'
 include ':testmodule'
 include ':common-ui'
 include ':app'
+include ':jds_public_treemap'
 rootProject.name = "commom-component"

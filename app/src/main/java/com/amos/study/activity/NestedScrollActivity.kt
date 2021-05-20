@@ -1,9 +1,10 @@
-package com.amos.study
+package com.amos.study.activity
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import com.amos.study.R
+import com.amos.study.base.BaseActivity
 
 /**
  * @author: amos

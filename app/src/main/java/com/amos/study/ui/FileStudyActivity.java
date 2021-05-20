@@ -7,7 +7,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.amos.study.BaseActivity;
+import com.amos.study.base.BaseActivity;
 
 import java.io.File;
 import java.io.FileNotFoundException;

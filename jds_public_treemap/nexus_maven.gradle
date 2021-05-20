@@ -1,0 +1,42 @@
+apply plugin: 'maven'
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+artifacts {
+    archives androidSourcesJar
+//    archives androidJavadocsJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: rootProject.rep.lib_repository) {
+                authentication(
+                        userName: rootProject.rep.lib_repository_userName,
+                        password: rootProject.rep.lib_repository_password
+                )
+            }
+            pom.project {
+                name 'jds-public-treemap'
+                version !rootProject.ext.rep.libVersionDesc || rootProject.ext.rep.libVersionDesc.allWhitespace ? rootProject.ext.uploadVersion.jds_public_treemap_version : rootProject.ext.uploadVersion.jds_public_treemap_version + "-" + rootProject.ext.rep.libVersionDesc
+                artifactId rootProject.ext.rep.lib_prefix + 'treemap'
+                groupId 'com.jds.renzhe'
+                packaging 'aar'
+                description 'treemap library'
+            }
+        }
+    }
+}

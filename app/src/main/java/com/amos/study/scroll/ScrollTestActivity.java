@@ -3,7 +3,6 @@ package com.amos.study.scroll;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.ParcelUuid;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.amos.study.BaseActivity;
+import com.amos.study.base.BaseActivity;
 import com.amos.study.R;
 
 /**

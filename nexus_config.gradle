@@ -1,0 +1,35 @@
+ext {
+
+    uploadVersion = [
+            jds_public_http_version   : "1.0.3",
+            jds_public_base_version   : "1.0.3",
+            jds_public_lhb_version    : "1.0.4",
+            jds_public_treemap_version: "1.0.3"
+    ]
+
+    //发布用仓库
+    pro = [
+            /*"libVersionName"         : "1.0.0",
+            "libVersionCode"         : 1,*/
+            "libVersionDesc"         : "",//beta1
+            "lib_repository"         : "http://mvn.jindashi.cn/nexus/content/repositories/android",
+            "lib_prefix"             : "jds-public-",
+            "lib_repository_userName": "zhangliang",
+            "lib_repository_password": "F0zfPoEu9uJRcOuYixQo",
+    ]
+
+    //开发用仓库
+    dev_amos = [
+            /*"libVersionName"         : "1.0.0",
+            "libVersionCode"         : 1,*/
+            "libVersionDesc"         : "",//SNAPSHOT
+            "lib_repository"         : "http://localhost:8081/repository/jindashi_android/",
+            "lib_prefix"             : "jds-public-",
+            "lib_repository_userName": "admin",
+            "lib_repository_password": "admin123",
+    ]
+
+
+    //仓库
+    rep = pro
+}

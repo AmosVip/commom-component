@@ -1,7 +1,7 @@
 package com.amos.study.ui
 
 import android.os.Bundle
-import com.amos.study.BaseActivity
+import com.amos.study.base.BaseActivity
 
 /**
  * @author: amos

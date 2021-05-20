@@ -1,4 +1,4 @@
-package com.amos.study
+package com.amos.study.activity
 
 import android.content.Context
 import android.content.Intent
@@ -10,9 +10,10 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
 import android.widget.TextView
+import com.amos.study.R
+import com.amos.study.base.BaseActivity
 import com.amos.study.databinding.ActivityTestTextviewExpandBinding
 import com.amos.study.helper.StockStringBuilderHelper
-import com.amos.study.utlis.TestInternal
 
 /**
  * @author: amos

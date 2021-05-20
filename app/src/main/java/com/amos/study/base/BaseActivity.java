@@ -1,4 +1,4 @@
-package com.amos.study;
+package com.amos.study.base;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.preference.PreferenceActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -33,12 +34,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         logLifecycle("onCreate");
         ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("");
-        //NestedScrollingChild3
-//        Lifecycle
-        //getLifecycle().addObserver(this);
-
-
     }
 
     @Override
@@ -108,6 +103,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        logLifecycle("onWindowFocusChanged    hasFocus =  " + hasFocus);
+    }
+
+    @Override
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         logLifecycle("onConfigurationChanged");
@@ -119,7 +120,19 @@ public abstract class BaseActivity extends AppCompatActivity {
         logLifecycle("onActivityResult:  requestCode= " + requestCode + "  resultCode=" + resultCode);
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+
+
     protected void logLifecycle(String logStr) {
-        Log.d("生命周期" + TAG, "=====  " + logStr + "  =====");
+        Log.d(TAG+ "生命周期" , "=====  " + logStr + "  =====");
     }
 }

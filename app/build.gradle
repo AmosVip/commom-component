@@ -51,17 +51,20 @@ android {
     }
     sourceSets {
         main {
+            java {
+                srcDirs 'src/main/java', 'src/main/mianshi'
+            }
             res {
-                srcDirs 'src/main/res', 'src/main/res-test'
+                srcDirs 'src/main/res', 'src/main/res-mianshi'
             }
         }
     }
 
-   /* buildFeatures {
-        // Enables Jetpack Compose for this module
-        viewBinding true
-        //compose false
-    }*/
+    /* buildFeatures {
+         // Enables Jetpack Compose for this module
+         viewBinding true
+         //compose false
+     }*/
 
     viewBinding {
         enabled = true
@@ -164,6 +167,8 @@ dependencies {
 
     //龙虎榜
     implementation "com.jds.renzhe:jds-public-lhb:1.0.3"
-   /* implementation 'com.jds.renzhe:jds-public-base:1.0.0'
-    implementation 'com.jds.renzhe:jds-public-http:1.0.0'*/
+    /* implementation 'com.jds.renzhe:jds-public-base:1.0.0'
+     implementation 'com.jds.renzhe:jds-public-http:1.0.0'*/
+    implementation project(path: ':jds_public_treemap')
+
 }

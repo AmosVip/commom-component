@@ -11,11 +11,8 @@ import android.webkit.SslErrorHandler
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
-import com.amos.study.BaseActivity
-import com.amos.study.BuildConfig
-import com.amos.study.R
+import com.amos.study.base.BaseActivity
 import com.amos.study.databinding.ActivityAndroidAutoSizeBinding
-import com.amos.study.databinding.ActivityMainBinding
 import com.amos.study.widget.ObservableWebView
 
 /**

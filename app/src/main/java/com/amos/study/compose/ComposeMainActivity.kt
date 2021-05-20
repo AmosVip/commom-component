@@ -6,7 +6,7 @@ import android.os.Bundle
 //import androidx.compose.material.Text
 //import androidx.compose.runtime.Composable
 //import androidx.compose.ui.platform.setContent
-import com.amos.study.BaseActivity
+import com.amos.study.base.BaseActivity
 
 /**
  * @author: amos

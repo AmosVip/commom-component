@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
-import com.amos.study.BaseActivity;
+import com.amos.study.base.BaseActivity;
 
 /**
  * <pre>

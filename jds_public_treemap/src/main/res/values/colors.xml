@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="jptm_ggt_login_black">#e03c34</color>
+    <color name="jptm_cloud_one">@android:color/holo_blue_light</color>
+    <color name="jptm_cloud_two">#673AB7</color>
+    <color name="jptm_cloud_three">#F44336</color>
+    <color name="jptm_cloud_four">#FFC107</color>
+    <color name="jptm_cloud_five">#8BC34A</color>
+    <color name="jptm_cloud_six">#CDDC39</color>
+    <color name="jptm_cloud_seven">#009688</color>
+    <color name="jptm_color_white">#fff</color>
+    <color name="jptm_color_262933">#262933</color>
+
+</resources>

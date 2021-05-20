@@ -1,4 +1,4 @@
-package com.amos.study;
+package com.amos.study.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;

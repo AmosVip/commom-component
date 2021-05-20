@@ -22,7 +22,7 @@
             android:value="1334" />
 
         <!--        <activity android:name=".ui.FileStudyActivity">-->
-        <activity android:name="com.study.stockcloud.StockCloudActivity">
+        <activity android:name=".MianShiAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,23 +34,39 @@
 
         <activity android:name=".compose.ComposeMainActivity" />
 
-        <activity android:name=".ExpandTextViewActivity" />
+        <activity android:name=".activity.ExpandTextViewActivity" />
 
         <activity android:name=".ui.NestedScrollWebViewActivity" />
 
         <activity android:name=".kotlin.KotlinMainActivity" />
 
-        <activity android:name=".NestedScrollActivity" />
+        <activity android:name=".activity.NestedScrollActivity" />
 
         <activity android:name=".socket.SocketActivity" />
 
-        <activity android:name=".DiyTayLayoutActivity" />
+        <activity android:name=".activity.DiyTayLayoutActivity" />
 
         <activity android:name=".scroll.ScrollTestActivity" />
 
         <activity android:name=".ui.RxJavaActivity" />
 
         <activity android:name=".ui.AndroidAutoSizeActivity" />
+
+        <!--<activity android:name=".MianShiAct">
+            <intent-filter>
+                <action android:name="com.amos.study.MianShiAct" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>-->
+
+        <activity android:name=".act.ServiceAct">
+            <intent-filter>
+                <action android:name="com.amos.study.ServiceAct" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".service.StartService"/>
     </application>
 
 </manifest>

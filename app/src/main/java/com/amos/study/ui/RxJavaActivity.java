@@ -7,14 +7,9 @@ import android.util.Log;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
 
-import com.amos.study.BaseActivity;
+import com.amos.study.base.BaseActivity;
 import com.amos.study.R;
-import com.bumptech.glide.Glide;
-
-import java.util.Collections;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;

@@ -1,4 +1,4 @@
-package com.amos.study;
+package com.amos.study.activity;
 
 import android.os.Bundle;
 

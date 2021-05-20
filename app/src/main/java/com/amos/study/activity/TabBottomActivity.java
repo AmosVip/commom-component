@@ -1,21 +1,16 @@
-package com.amos.study;
+package com.amos.study.activity;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.viewpager.widget.ViewPager;
 
+import com.amos.study.base.BaseActivity;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <pre>
