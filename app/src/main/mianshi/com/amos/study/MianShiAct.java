@@ -13,6 +13,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.os.MessageQueue;
+import android.os.StatFs;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.util.LruCache;
@@ -70,7 +71,9 @@ public class MianShiAct extends BaseActivity implements View.OnClickListener {
         Intent intent = new Intent("com.amos.study.MianShiAct");
         context.startActivity(intent);
 
-
+        Thread.setDefaultUncaughtExceptionHandler();
+        SecurityManager;
+        StatFs
     }
 
 
@@ -86,7 +89,7 @@ public class MianShiAct extends BaseActivity implements View.OnClickListener {
         Log.e(MianShiAct.class.getSimpleName(), "mac = " + mac);
 
 
-StringBuilder;
+/*StringBuilder;
 StringBuffer;
 String;
 TreeMap;
@@ -129,7 +132,7 @@ RecyclerView;
 
 
         AtomicInteger;
-        synchronized ()
+        synchronized ()*/
     }
 
     @Override
