@@ -171,4 +171,6 @@ dependencies {
      implementation 'com.jds.renzhe:jds-public-http:1.0.0'*/
     implementation project(path: ':jds_public_treemap')
 
+    implementation("com.squareup.okhttp3:okhttp:3.10.0") //4.9.1
+
 }

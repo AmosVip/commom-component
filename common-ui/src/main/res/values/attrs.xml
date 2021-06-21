@@ -5,4 +5,10 @@
         <attr name="c_flow_column_gap" format="dimension" />
         <attr name="c_flow_max_row_count" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="UIFlowLayout">
+        <attr name="ui_flow_row_gap" format="dimension" />
+        <attr name="ui_flow_column_gap" format="dimension" />
+        <attr name="ui_flow_max_row_count" format="integer" />
+    </declare-styleable>
 </resources>
